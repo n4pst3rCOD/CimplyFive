@@ -1,0 +1,202 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Add Customer</title>
+
+    <script>
+
+        function validateForm() {
+
+            var firstName = document.forms["addcustomer"]["firstname"].value;
+            if (firstName == "") {
+                alert("First Name cannot be empty!!");
+                return false;
+            }
+
+            var lastName = document.forms["addcustomer"]["lastname"].value;
+            if (lastName == "") {
+                alert("Last Name cannot be empty!!");
+                return false;
+            }
+
+            var emailId = document.forms["addcustomer"]["emailid"].value;
+            if (emailId == "") {
+                alert("Email id cannot be empty!!");
+                return false;
+            }
+
+            var mobileNumber = document.forms["addcustomer"]["mobilenumber"].value;
+            if (mobileNumber == "") {
+                alert("First Name cannot be empty!!");
+                return false;
+            }
+
+            var address1 = document.forms["addcustomer"]["address1"].value;
+            if (address1 == "") {
+                alert("Address cannot be empty!!");
+                return false;
+            }
+
+            var pincode1 = document.forms["addcustomer"]["pincode1"].value;
+            if (pincode1 == "") {
+                alert("Pincode cannot be empty!!");
+                return false;
+            }
+
+            var city1 = document.forms["addcustomer"]["city1"].value;
+            if (city1 == "") {
+                alert("City cannot be empty!!");
+                return false;
+            }
+
+            var state1 = document.forms["addcustomer"]["state1"].value;
+            if (state1 == "") {
+                alert("State cannot be empty!!");
+                return false;
+            }
+
+            var country1 = document.forms["addcustomer"]["country1"].value;
+            if (firstName == "") {
+                alert("Country cannot be empty!!");
+                return false;
+            }
+
+
+            var address2 = document.forms["addcustomer"]["address2"].value;
+            var pincode2 = document.forms["addcustomer"]["pincode2"].value;
+            var country2 = document.forms["addcustomer"]["country2"].value;
+            var city2 = document.forms["addcustomer"]["city2"].value;
+            var state2 = document.forms["addcustomer"]["state2"].value;
+            if (address2 != "") {
+                if(pincode2 == "" || country2 == "" || city2 == "" || state2 == ""){
+                    alert("Address2 cannot be empty!!");
+                    return false;
+
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+<div th:text="${entityValue}"></div>
+<TABLE BORDER="0">
+    <form method="post" action="/cimply/addcustomer" name="addcustomer" onsubmit="return validateForm()">
+        <TR>
+            <TD>First Name</TD>
+            <TD>
+                <input type="text" size="25"  name="firstname"><br>
+            </TD>
+        </TR>
+        <TR>
+            <TD> Middle Name</TD>
+            <TD>
+                <input type="text" size="25"  name="middlename">
+            </TD>
+        </TR>
+        <TR>
+            <TD>Last Name</TD>
+            <TD>
+                <input type="text" size="25"  name="lastname"><br>
+            </TD>
+        </TR>
+        </TR>
+        <TR>
+            <TD>Email id</TD>
+            <TD>
+                <input type="text" size="25"  name="emailid"><br>
+            </TD>
+        </TR>
+        </TR>
+        <TR>
+            <TD>Mobile Number</TD>
+            <TD>
+                <input type="text" size="25"  name="mobilenumber"><br>
+            </TD>
+        </TR>
+        </TR>
+        <TR>
+            <TD>Office Number</TD>
+            <TD>
+                <input type="text" size="25"  name="officenumber"><br>
+            </TD>
+        </TR>
+        </TR>
+        <tr>
+            <TD>
+                <br>
+
+            </TD>
+        </tr>
+        <TR>
+            <TD><p>Digest Frequency</p></TD>
+            <TD>
+                <input type="radio" name="digest" value="daily" >Daily<br>
+                <input type="radio" name="digest" value="weekly" checked="checked">Weekly<br>
+                <input type="radio" name="digest" value="biweekly">Biweekly<br>
+                <input type="radio" name="digest" value="monthly">Monthly<br>
+
+            </TD>
+        </TR>
+
+        <tr>
+            <TD>
+                <br>
+
+            </TD>
+        </tr>
+
+        <TR>
+            <TD><p> <p>Address 1</p></p></TD>
+            <TD>
+                Address: <input type="text" size="25"  name="address1"><br>
+                Landmark: <input type="text" size="25"  name="landmark1"><br>
+                Pincode: <input type="text" size="25"  name="pincode1"><br>
+                City: <input type="text" size="25"  name="city1"><br>
+                State: <input type="text" size="25"  name="state1"><br>
+                Country: <input type="text" size="25"  name="country1"><br>
+            </TD>
+        </TR>
+        <tr>
+            <TD>
+                <br>
+
+            </TD>
+        </tr>
+
+        <TR>
+            <TD><p> <p>Address 2</p></p></TD>
+            <TD width="60%">
+                Address: <input type="text" size="25"  name="address2"><br>
+                Landmark: <input type="text" size="25"  name="landmark2"><br>
+                Pincode: <input type="text" size="25"  name="pincode2"><br>
+                City: <input type="text" size="25"  name="city2"><br>
+                State: <input type="text" size="25"  name="state2"><br>
+                Country: <input type="text" size="25"  name="country2"><br>
+            </TD>
+        </TR>
+
+
+        <tr>
+            <TD>
+
+
+            </TD>
+            <TD>
+                <br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </TD>
+            <TD>
+
+
+            </TD>
+        </tr>
+
+    </form>
+</table>
+
+</body>
+</html>

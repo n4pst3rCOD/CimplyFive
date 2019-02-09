@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+</head>
+<body>
+<div class="container">
+    <h2>Customer Details</h2>
+    <div>
+        <form th:object="${customer}" th:method="put">
+
+
+
+                <div class="col-sm-10">
+                    Customer ID: <input type="text" class="form-control" th:field="*{customerID}" th:name="customerid"  readonly="readonly"> </br>
+                    First Name: <input type="text" class="form-control" th:field="*{firstName}" th:name="firstname"/> </br>
+                    Middle Name: <input type="text" class="form-control" th:field="*{middleName} " th:name="middlename"/> </br>
+                    Last Name: <input type="text" class="form-control" th:field="*{lastName}" th:name="lastname"/> </br>
+                    Email id: <input type="text" class="form-control" th:field="*{emailID}" th:name="emailid"/> </br>
+                    Mobile Number: <input type="text" class="form-control" th:field="*{mobileNumber}" th:name="mobilenumber"/> </br>
+                    Office Number: <input type="text" class="form-control" th:field="*{officeNumber}"/> </br>
+                   Digest Frequency: <input type="text" class="form-control" th:field="*{digestFrequency}"/> </br>
+
+
+
+                    <tr th:each="address,iterStat: *{addresses}" >
+                        <br> <h2> Address <td th:text="${iterStat.count}"></td></h2>
+                        Address : <input type="text" th:value="${address.address}"/> </br>
+                        Landmark : <input type="text" class="form-control" th:value="${address.landmark}"/> </br>
+                        Pincode : <input type="text" class="form-control"th:value="${ address.pinCode}"/> </br>
+                        City : <input type="text" class="form-control" th:value="${address.city}"/> </br>
+                        State : <input type="text" class="form-control" th:value="${address.state}"/> </br>
+                        Country : <input type="text" class="form-control" th:value="${address.country}"/> </br>
+
+                    </tr>
+
+
+
+
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
